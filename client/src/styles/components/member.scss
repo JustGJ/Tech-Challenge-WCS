@@ -1,0 +1,15 @@
+li {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+    transition: .3s ease-in-out;
+    
+    @media screen and (max-width: 850px) {
+        font-size: 0.8rem;
+    }
+
+    &:hover {
+        color: #CDC1A9;
+        transform: translateX(-1px);
+    }
+}

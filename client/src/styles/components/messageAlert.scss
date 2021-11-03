@@ -1,0 +1,21 @@
+.message__alert {
+    font-size: .9rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 12px;
+    background-color: red;
+  
+    @media screen and (max-width: 400px) {
+      font-size: .8rem;
+  }
+
+    &--success {
+     background-color: #4aaf58;
+  
+    }
+    &--error {
+          background-color: #f13232;
+        }
+  }
+  

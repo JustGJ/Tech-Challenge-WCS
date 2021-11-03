@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #BBD1DE;
+    padding: 2em;
+    box-shadow: 2px 2px 7px rgba(36, 36, 36, 0.288);
+
+    img {
+        max-width: 96px;
+        height: 40px;
+    }
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: 2.5em;
+        padding-left: .3em;
+
+        @media screen and (max-width: 500px) {
+            font-size: 1.8rem;
+        }
+        @media screen and (max-width: 360px) {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.form {
+    position: relative;
+    margin: 0 0 15px 9px;
+
+    
+    label {
+       position: absolute;
+       left: 0;
+       top: 15px;
+       z-index: -1;
+       color:#CDC1A9 ;
+       font-size: .9rem;
+       transition: .2s ease-in-out;
+
+       @media screen and (max-width: 400px) {
+        font-size: .85rem;
+    }
+   }
+
+  input {
+      margin: 17px 19px 0 0;
+      padding: 0px 0 3px 0px;
+      color: #CDC1A9;
+      background-color: rgba(42,42,42,.87);
+      background: transparent;
+      border-bottom: 1px solid #CDC1A9;
+
+      &:focus + label, 
+      &:valid ~ label {
+          top: -5px;
+          font-size: .75rem;
+      }
+
+      &:-webkit-autofill, 
+      &:-webkit-autofill:focus {
+        -webkit-text-fill-color: #CDC1A9;
+        transition: background-color 5000s ease-in-out 0s;
+    } 
+  }
+  button {
+    cursor: pointer;
+    padding: 5px 10px;
+    letter-spacing: .05rem;
+    border-radius: 6px;
+    background-color: #CDC1A9;
+    transition: transform .3s;
+
+    @media screen and (max-width: 350px) {
+      margin-top: 5px !important;
+      font-size: .7rem !important;
+  }
+    &:hover {
+        transform: scaleX(1.1)
+    }
+  }
+}
+
