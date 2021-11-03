@@ -18,7 +18,7 @@ const errors_utils_1 = require("../utils/errors.utils");
 const getAllMembers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const members = yield member_model_1.default.find();
-        res.status(201).json(members);
+        return res.status(201).json(members);
     }
     catch (err) {
         return res.status(400).send(err);
@@ -27,13 +27,9 @@ const getAllMembers = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 exports.getAllMembers = getAllMembers;
 const addMember = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // const newMember = await MemberModel.create({
-        //     name: req.body.name,
-        // });
         const member = yield member_model_1.default.create({
             name: req.body.name,
         });
-        // return res.status(201).send(newMember);
         return res.status(201).send({ member });
     }
     catch (err) {
@@ -45,12 +41,10 @@ exports.addMember = addMember;
 const deleteMember = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield member_model_1.default.deleteOne({ _id: req.params.id }).exec();
-        // await MemberModel.remove({ _id: req.params.id }).exec();
-        return res.status(201).send({ message: req.body.name + ' a été supprimé du voyage !' });
+        return res.status(201).send({ name: req.body.name });
     }
     catch (err) {
-        if (err)
-            return res.status(500).send({ message: err });
+        return res.status(500).send({ err });
     }
 });
 exports.deleteMember = deleteMember;

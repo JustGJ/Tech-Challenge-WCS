@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// == Connexion à la DB
+
 mongoose
     .connect(
         'mongodb+srv://' + process.env.DB_USER_PASS + '@cluster0.lauwp.mongodb.net/Argonautes',
@@ -11,6 +11,6 @@ mongoose
     .then(() => {
         console.log('Connected to MongoDB');
     })
-    .catch((err: any) => {
+    .catch((err: Error) => {
         console.log('Failed to connect to MongoDB : ', err);
     });
